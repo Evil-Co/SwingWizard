@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Parent Artifact -->
+	<parent>
+		<artifactId>wizard</artifactId>
+		<groupId>org.evilco</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<!-- Artifact Information -->
+	<groupId>org.evilco.wizard</groupId>
+	<artifactId>demo</artifactId>
+
+	<!-- Artifact Metadata -->
+	<name>Wizard Demo</name>
+	<inceptionYear>2014</inceptionYear>
+
+	<!-- Author Metadata -->
+	<organization>
+		<name>Evil-Co</name>
+		<url>http://www.evil-co.org</url>
+	</organization>
+
+	<!-- Contributors -->
+	<contributors>
+		<contributor>
+			<name>Johannes Donath</name>
+			<email>johannesd@evil-co.com</email>
+			<timezone>UTC +1:00</timezone>
+
+			<organization>Evil-Co</organization>
+			<organizationUrl>http://www.evil-co.org</organizationUrl>
+
+			<roles>
+				<role>Project Maintainer</role>
+				<role>Software Engineer</role>
+			</roles>
+		</contributor>
+	</contributors>
+
+	<!-- License Metadata -->
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>LICENSE</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<!-- Issue Tracker -->
+	<issueManagement>
+		<system>JIRA</system>
+		<url>http://www.evil-co.com/project</url>
+	</issueManagement>
+
+	<!-- CI System -->
+	<ciManagement>
+		<system>Bamboo</system>
+		<url>http://www.evil-co.com/ci</url>
+	</ciManagement>
+
+	<!-- SCM Metadata -->
+	<scm>
+		<url>https://github.com/Evil-Co/SwingWizard</url>
+		<connection>scm:git:git://github.com/Evil-Co/SwingWizard.git</connection>
+		<developerConnection>scm:git:git://git@github.com/Evil-Co/SwingWizard.git</developerConnection>
+	</scm>
+
+	<!-- Build Properties -->
+	<properties>
+		<!-- Build Setup -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- Dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>org.evilco</groupId>
+			<artifactId>wizard</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+
+	<!-- Build Setup -->
+	<build>
+		<finalName>${project.groupId}.${project.artifactId}-${project.version}</finalName>
+		<defaultGoal>clean install</defaultGoal>
+
+		<!-- Directories -->
+		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+		<testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+
+		<!-- Resources -->
+		<resources>
+			<!-- Packet Information -->
+			<resource>
+				<targetPath>.</targetPath>
+				<directory>${basedir}/</directory>
+				<filtering>false</filtering>
+
+				<includes>
+					<include>LICENSE</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<!-- Build Plugins -->
+		<plugins>
+			<!-- Java Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<!-- JAR Creation -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+
+				<configuration>
+					<archive>
+						<addMavenDescriptor>true</addMavenDescriptor>
+
+						<manifest>
+							<mainClass>org.evilco.wizard.demo.WizardDemo</mainClass>
+
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<!-- Minimize JAR -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>1.7.1</version>
+
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+					<minimizeJar>true</minimizeJar>
+
+					<artifactSet>
+						<includes>
+							<include>com.evilco.*:*</include>
+						</includes>
+					</artifactSet>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
