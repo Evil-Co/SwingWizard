@@ -5,11 +5,8 @@
 	<!-- Artifact Information -->
 	<groupId>org.evilco</groupId>
 	<artifactId>wizard</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<modules>
-		<module>demo</module>
-	</modules>
 
 	<!-- Artifact Metadata -->
 	<name>Swing Wizard</name>
