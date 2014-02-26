@@ -1,4 +1,4 @@
-Swing Wizard [![Build Status](http://assets.evil-co.com/build/WH-MASTER.png)](http://www.evil-co.com/ci/browse/JSW)
+Swing Wizard [![Build Status](http://assets.evil-co.com/build/JSW-MASTER.png)](http://www.evil-co.com/ci/browse/JSW)
 ===============
 The Swing Wizard library allows you to easily create dependency free wizards for
 your Swing/AWT based applications.
