@@ -31,6 +31,28 @@ this class will cause an exception to occur upon access. This is a small design 
 of this library but should not cause any problems if the library is being used
 the right way. The use of the abstract classes provided is recommended.
 
+__Please Note:__ This library can easily be used in your maven projects by using the
+following dependency and repository (the library might become available via Maven
+Central in the future):
+
+	<!-- ... -->
+	<repository>
+		<id>evil-co</id>
+		<url>http://nexus.evil-co.org/content/repositories/free-snapshots/</url>
+		<snapshots>
+			<enabled>true</enabled>
+		</snapshots>
+	</repository>
+	<!-- ... -->
+
+	<!-- ... -->
+	<dependency>
+		<groupId>org.evilco</groupId>
+		<artifactId>wizard</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</dependency>
+	<!-- ... -->
+
 Compiling
 ---------
 
