@@ -37,8 +37,8 @@ Central in the future):
 
 	<!-- ... -->
 	<repository>
-		<id>evil-co</id>
-		<url>http://nexus.evil-co.org/content/repositories/free-snapshots/</url>
+		<id>basket</id>
+		<url>http://basket.cindyscats.com/content/repositories/snapshots/</url>
 		<snapshots>
 			<enabled>true</enabled>
 		</snapshots>
