@@ -68,12 +68,23 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<!-- Dependency Repositories -->
+	<repositories>
+		<repository>
+			<id>evil-co</id>
+			<url>http://nexus.evil-co.org/content/repositories/free-snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<!-- Dependencies -->
 	<dependencies>
 		<dependency>
 			<groupId>org.evilco</groupId>
 			<artifactId>wizard</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
