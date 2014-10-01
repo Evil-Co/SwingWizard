@@ -64,12 +64,17 @@ simply run:
 Maven will automatically download dependencies for you. Note: For that to work,
 be sure to add Maven to your "PATH".
 
+Issue tracker
+------------
+
+The issue tracker for this project is available at https://evilco.atlassian.net/browse/JSW/.
+
 Contributing
 ------------
 
 We happily accept contributions. The best way to do this is to fork SwingWizard
 on GitHub, add your changes, and then submit a pull request. We'll look at it,
-make comments, and merge it into DispenserRefill if everything works out.
+make comments, and merge it into SwingWizard if everything works out.
 
 By submitting code, you agree to place to license your code under the
 [Apache 2.0 License](LICENSE).
